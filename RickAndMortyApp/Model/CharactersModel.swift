@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct RickAndMoreResults:Codable {
-    var results: CharactersModel
+struct CharactersResponse: Decodable {
+    let results: [CharactersModel]
 }
 
 struct CharactersModel: Codable {
     var id: Int
     var name: String
+    var gender: String
 }
-
-

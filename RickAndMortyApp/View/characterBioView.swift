@@ -15,7 +15,6 @@ struct characterBioView: View {
         
         ScrollView {
             VStack {
-                
                 AsyncImage(url: URL(string: character.image)) { phase in
                     if let image = phase.image {
                         image
@@ -29,9 +28,9 @@ struct characterBioView: View {
                         Rectangle()
                             .frame(width: .infinity, height: 400)
                             .cornerRadius(20)
-                            .ignoresSafeArea()
                     }
                 }
+                Spacer()
 
                 
                 Text(character.name)
@@ -40,6 +39,7 @@ struct characterBioView: View {
                     .foregroundColor(.blue)
                 
             }
+
         }
         
         

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct CharactersResponse: Codable {
+struct CharactersResponse: Codable, Identifiable {
     let results: [CharactersModel]
 }
 
-struct CharactersModel: Codable {
+struct CharactersModel: Codable, Identifiable {
     var id: Int
     var name: String
     var gender: String

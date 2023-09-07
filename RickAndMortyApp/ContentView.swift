@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var characters: [CharactersModel] = []
-
     var body: some View {
         VStack {
             Text("Testando")

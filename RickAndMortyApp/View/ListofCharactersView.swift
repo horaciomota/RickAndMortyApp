@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ListofCharactersView: View {
+    @State private var characters: [CharactersModel] = []
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            LazyVStack {
+                
+                ForEach(characters) { character in
+                    /*@START_MENU_TOKEN@*/Text(character.name)/*@END_MENU_TOKEN@*/
+                }
+                
+            }.navigationTitle("Characters")
+        }
+        
     }
 }
 

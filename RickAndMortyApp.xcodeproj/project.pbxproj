@@ -14,6 +14,7 @@
 		83B23BA82AA9019600AD7C2A /* charactersApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B23BA72AA9019600AD7C2A /* charactersApiCall.swift */; };
 		83B23BB22AAA354400AD7C2A /* characterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B23BB12AAA354400AD7C2A /* characterCellView.swift */; };
 		83B23BB42AAA35A900AD7C2A /* ListofCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B23BB32AAA35A900AD7C2A /* ListofCharactersView.swift */; };
+		83B23BB62AAA666300AD7C2A /* characterBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B23BB52AAA666300AD7C2A /* characterBioView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		83B23BA72AA9019600AD7C2A /* charactersApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = charactersApiCall.swift; sourceTree = "<group>"; };
 		83B23BB12AAA354400AD7C2A /* characterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterCellView.swift; sourceTree = "<group>"; };
 		83B23BB32AAA35A900AD7C2A /* ListofCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListofCharactersView.swift; sourceTree = "<group>"; };
+		83B23BB52AAA666300AD7C2A /* characterBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterBioView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				83B23BB12AAA354400AD7C2A /* characterCellView.swift */,
 				83B23BB32AAA35A900AD7C2A /* ListofCharactersView.swift */,
+				83B23BB52AAA666300AD7C2A /* characterBioView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				83B23BB22AAA354400AD7C2A /* characterCellView.swift in Sources */,
 				83B23BA82AA9019600AD7C2A /* charactersApiCall.swift in Sources */,
 				83B23BA62AA9010000AD7C2A /* CharactersModel.swift in Sources */,
+				83B23BB62AAA666300AD7C2A /* characterBioView.swift in Sources */,
 				83B23BB42AAA35A900AD7C2A /* ListofCharactersView.swift in Sources */,
 				83B23B952AA9001100AD7C2A /* RickAndMortyApp.swift in Sources */,
 			);

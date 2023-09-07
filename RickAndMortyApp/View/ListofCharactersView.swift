@@ -23,7 +23,10 @@ struct ListofCharactersView: View {
                 
                 LazyVGrid(columns: gridItems, spacing: 14) {
                     ForEach(filteredCharacters) { character in
-                        characterCellView(character: character)
+                        NavigationLink(destination: characterBioView(character: character)) {
+                            characterCellView(character: character)
+                        }
+
                     }
                 }
                 .task {
@@ -34,7 +37,8 @@ struct ListofCharactersView: View {
                         }
                     }
             }.navigationTitle("Characters")
-                .searchable(text: $searchTerm, prompt: "Search a character")
+            .searchable(text: $searchTerm, prompt: "Search a character")
+            
         }
         
     }

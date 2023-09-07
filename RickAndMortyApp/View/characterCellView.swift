@@ -28,6 +28,8 @@ struct characterCellView: View {
             Text("\(character.species) , \(character.status)")
                 .font(.footnote)
                 .foregroundColor(.secondary)
+            
+           
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CharactersResponse: Codable, Identifiable {
+struct CharactersResponse: Codable {
     let results: [CharactersModel]
 }
 
@@ -15,6 +15,8 @@ struct CharactersModel: Codable, Identifiable {
     var id: Int
     var name: String
     var gender: String
+    var species: String
+    var status: String
 }
 
 

@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct ListofCharactersView: View {
-    @State private var characters: [CharactersModel] = []
+    @State var characters: [CharactersModel] = []
 
     var body: some View {
         NavigationView {
-            LazyVStack {
+            LazyHStack {
                 
                 ForEach(characters) { character in
-                    /*@START_MENU_TOKEN@*/Text(character.name)/*@END_MENU_TOKEN@*/
+                    characterCellView(character: character)
+                    
                 }
                 
-            }.navigationTitle("Characters")
+            }
+            .task {
+                    do {
+                        characters = try await fetchCharacter()
+                    }catch {
+                        print("Erro ao obter dados: \(error)")
+                    }
+                }
+            
+            .navigationTitle("Characters")
         }
         
     }

@@ -1,35 +1,27 @@
-//
-//  characterCellView.swift
-//  RickAndMortyApp
-//
-//  Created by Horacio Mota on 07/09/2023.
-//
-
 import SwiftUI
 
 struct characterCellView: View {
-    var body: some View {
+    let character: CharactersModel
 
+    var body: some View {
         VStack {
             Rectangle()
                 .frame(width: 120, height: 180)
                 .cornerRadius(20)
             
-            Text("Rick Sanchez")
+            Text(character.name)
                 .font(.headline)
                 .fontWeight(.bold)
             
-            Text("Human, Alibe")
+            Text("\(character.species) , \(character.status)")
                 .font(.footnote)
                 .foregroundColor(.gray)
-            
         }
-
     }
 }
 
 struct characterCellView_Previews: PreviewProvider {
     static var previews: some View {
-        characterCellView()
+        characterCellView(character: CharactersModel(id: 1, name: "Rick sanchez", gender: "Male", species: "Human", status: "Alive"))
     }
 }

@@ -23,10 +23,11 @@ struct characterCellView: View {
             Text(character.name)
                 .font(.headline)
                 .fontWeight(.bold)
+                .foregroundColor(.blue)
             
             Text("\(character.species) , \(character.status)")
                 .font(.footnote)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
         }
     }
 }

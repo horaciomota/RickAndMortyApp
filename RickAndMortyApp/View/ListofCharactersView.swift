@@ -9,26 +9,27 @@ import SwiftUI
 
 struct ListofCharactersView: View {
     @State var characters: [CharactersModel] = []
+    private let gridItems = [GridItem(.flexible()), GridItem(.flexible()),]
 
     var body: some View {
         NavigationView {
-            LazyHStack {
+            ScrollView {
                 
-                ForEach(characters) { character in
-                    characterCellView(character: character)
-                    
-                }
-                
-            }
-            .task {
-                    do {
-                        characters = try await fetchCharacter()
-                    }catch {
-                        print("Erro ao obter dados: \(error)")
+                LazyVGrid (columns: gridItems, spacing: 14) {
+                    ForEach(characters) { character in
+                        characterCellView(character: character)
+        
                     }
                 }
-            
+                .task {
+                        do {
+                            characters = try await fetchCharacter()
+                        }catch {
+                            print("Erro ao obter dados: \(error)")
+                        }
+                    }
             .navigationTitle("Characters")
+            }
         }
         
     }

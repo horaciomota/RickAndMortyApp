@@ -2,24 +2,26 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var characters: [CharactersModel] = []
+    @State private var listOfCoins: [CoinData] = []
+
 
     var body: some View {
         NavigationView {
-            List(characters, id: \.id) { character in
-                Text(character.name)
-                Text(character.gender)
+            List(listOfCoins, id: \.self) { coin in
+                Text(coin.name)
+                Text(coin.rank)
 
             }
             .onAppear {
                 Task {
                     do {
-                        characters = try await fetchCharacters()
-                        print("API conectada com sucesso")
+                        listOfCoins = try await getDataCoins()
                     } catch {
-                        print("Error fetching data: \(error)")
+                        print("Erro ao obter dados: \(error)")
                     }
                 }
             }
+
             .navigationBarTitle("Character List")
         }
     }

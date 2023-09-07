@@ -17,6 +17,7 @@ struct CharactersModel: Codable, Identifiable {
     var gender: String
     var species: String
     var status: String
+    var image: String
 }
 
 

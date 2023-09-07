@@ -9,16 +9,21 @@ import SwiftUI
 
 struct ListofCharactersView: View {
     @State var characters: [CharactersModel] = []
+    @State private var searchTerm = ""
+    
+    var filteredCharacters: [CharactersModel] {
+        guard !searchTerm.isEmpty else {return characters}
+        return characters.filter { $0.name.localizedCaseInsensitiveContains(searchTerm)}
+    }
     private let gridItems = [GridItem(.flexible()), GridItem(.flexible()),]
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 
-                LazyVGrid (columns: gridItems, spacing: 14) {
-                    ForEach(characters) { character in
+                LazyVGrid(columns: gridItems, spacing: 14) {
+                    ForEach(filteredCharacters) { character in
                         characterCellView(character: character)
-        
                     }
                 }
                 .task {
@@ -28,8 +33,8 @@ struct ListofCharactersView: View {
                             print("Erro ao obter dados: \(error)")
                         }
                     }
-            .navigationTitle("Characters")
-            }
+            }.navigationTitle("Characters")
+                .searchable(text: $searchTerm, prompt: "Search a character")
         }
         
     }

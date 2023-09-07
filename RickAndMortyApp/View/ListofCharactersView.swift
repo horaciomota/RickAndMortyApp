@@ -26,7 +26,6 @@ struct ListofCharactersView: View {
                         NavigationLink(destination: characterBioView(character: character)) {
                             characterCellView(character: character)
                         }
-
                     }
                 }
                 .task {

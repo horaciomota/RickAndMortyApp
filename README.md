@@ -1,4 +1,4 @@
-# Rick and Morty iOS App
+# Rick and Morty iOS
 
 This is a sample iOS 15+ SwiftUi project using:
 
